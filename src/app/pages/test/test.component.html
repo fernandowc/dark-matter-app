@@ -1,1 +1,47 @@
-<p>test works!</p>
+
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Position Column -->
+
+    <ng-container matColumnDef="iduser">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.iduser}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="firstname">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.firstname}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="secondname">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Segundo Nombre  </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.secondname}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="lastname">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Apellido  </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.lastname}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="surname">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Apellido Materno  </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.surname}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="urlfoto">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Foto  </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.urlfoto}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;" class="row"></mat-row>
+</table>
+
+<ul>
+    <li *ngFor="let a of listUsers">
+        {{ a.secondname }}
+    </li>
+</ul>

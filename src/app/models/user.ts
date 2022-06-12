@@ -4,5 +4,5 @@ export class User {
     secondname: string;
     lastname: string;
     surname: string;
-    urlfoto: string;
+    urlfoto?: string;
 }

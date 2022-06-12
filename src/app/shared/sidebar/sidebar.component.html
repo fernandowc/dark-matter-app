@@ -1,1 +1,40 @@
-<p>sidebar works!</p>
+<mat-sidenav-container fullscreen>
+    
+    <mat-sidenav #sidenav mode="side">
+        <mat-toolbar>
+            <span>Menu</span>
+        </mat-toolbar>
+
+        <mat-nav-list>
+            <a routerLink="/home" mat-list-item (click)="sidenav.toggle()">
+                <mat-icon mat-list-icon>home</mat-icon>
+                <span>Inicio</span>
+            </a>
+            <a routerLink="./lista" mat-list-item (click)="sidenav.toggle()">
+                <mat-icon mat-list-icon>group</mat-icon>
+                <span>Usuarios</span>
+            </a>
+        </mat-nav-list>
+    </mat-sidenav>
+
+    <!-- background-->
+    <mat-toolbar>
+        <button mat-icon-button (click)="sidenav.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+
+        <span>My App</span>
+
+        <span class="example-spacer"></span>
+        <button mat-icon-button>
+            <mat-icon>favorite</mat-icon>
+        </button>
+
+        <span class="spacer"></span>
+        
+        <button mat-button>Logout</button>
+    </mat-toolbar>
+
+    <router-outlet></router-outlet>
+
+</mat-sidenav-container>
