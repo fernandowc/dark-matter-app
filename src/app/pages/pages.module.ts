@@ -5,9 +5,7 @@ import { TestComponent } from "./test/test.component";
 import { HomeComponent } from './home/home.component';
 import { MatIconModule } from "@angular/material/icon";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { FlexLayoutModule } from "@angular/flex-layout";
-import { MatListModule } from "@angular/material/list";
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { LayoutModule } from "@angular/cdk/layout";
 import { MatCardModule } from "@angular/material/card";
@@ -25,6 +23,11 @@ import { RegisterComponent } from "../auth/register/register.component";
 import { NotfoundComponent } from "./notfound/notfound.component";
 import { BreadcrumbsComponent } from "../shared/breadcrumbs/breadcrumbs.component";
 import { CommonModule } from "@angular/common";
+import { CreateUsersComponent } from './users/create-users/create-users.component';
+import { MatTabsModule } from "@angular/material/tabs";
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { ListUsersComponent } from './users/list-users/list-users.component';
+import { ImagenPipe } from './pipe/imagen.pipe';
 
 @NgModule({
     declarations: [
@@ -37,6 +40,9 @@ import { CommonModule } from "@angular/common";
         SidebarComponent,
         HeaderComponent,
         UsersComponent,
+        CreateUsersComponent,
+        ListUsersComponent,
+        ImagenPipe,
     ],
     imports: [
       CommonModule,
@@ -54,7 +60,9 @@ import { CommonModule } from "@angular/common";
       MatGridListModule,
       FlexLayoutModule,
       ReactiveFormsModule,
-      FormsModule
+      FormsModule,
+      MatTabsModule,
+      MatProgressBarModule
     ]
   })
 export class PagesModule {}

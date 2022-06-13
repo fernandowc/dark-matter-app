@@ -6,11 +6,15 @@
         </mat-toolbar>
 
         <mat-nav-list>
-            <a routerLink="/home" mat-list-item (click)="sidenav.toggle()">
+            <a routerLink="/home" mat-list-item>
                 <mat-icon mat-list-icon>home</mat-icon>
                 <span>Inicio</span>
             </a>
-            <a routerLink="./lista" mat-list-item (click)="sidenav.toggle()">
+            <a routerLink="./lista" mat-list-item>
+                <mat-icon mat-list-icon>group</mat-icon>
+                <span>Lista</span>
+            </a>
+            <a routerLink="./usuarios" mat-list-item>
                 <mat-icon mat-list-icon>group</mat-icon>
                 <span>Usuarios</span>
             </a>
@@ -35,6 +39,9 @@
         <button mat-button>Logout</button>
     </mat-toolbar>
 
-    <router-outlet></router-outlet>
+    <div class="container">
+        <router-outlet></router-outlet>
+    </div>
+    
 
 </mat-sidenav-container>

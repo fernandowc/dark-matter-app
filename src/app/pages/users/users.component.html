@@ -1,1 +1,28 @@
-<p>users works!</p>
+<h1>Usuarios</h1>
+<mat-divider></mat-divider>
+<br>
+<mat-tab-group mat-align-tabs="center">
+    <mat-tab label="LIST">
+        <app-list-users></app-list-users>
+    </mat-tab>
+    <mat-tab label="ADD">
+        <mat-card class="example-card">
+            <mat-card-title>Registrar Usuario</mat-card-title>
+            <mat-card-content>
+                <app-create-users></app-create-users>
+            </mat-card-content>
+            <mat-divider inset></mat-divider>
+            <mat-card-actions>
+                <button mat-button>GUARDAR</button>
+                <button mat-button>LIMPIAR</button>
+            </mat-card-actions>
+            <mat-card-footer>
+                <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+            </mat-card-footer>
+        </mat-card>
+    </mat-tab>
+    <mat-tab label="UPDATE">
+
+    </mat-tab>
+</mat-tab-group>
+
