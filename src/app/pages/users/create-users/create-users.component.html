@@ -7,23 +7,23 @@
         fxLayoutGap="20px">
             <mat-form-field fxFlex="100" fxLayout.xs="column">
                 <mat-label>Primer Nombre</mat-label>
-                <input matInput type="text" required>
+                <input matInput type="text" [(ngModel)] = "usuario.firstname" required>
             </mat-form-field>
             <mat-form-field fxFlex="100">
                 <mat-label>Segundo Nombre</mat-label>
-                <input matInput type="text">
+                <input matInput type="text" [(ngModel)] = "usuario.secondname">
             </mat-form-field>
         </div>
 
         <mat-form-field>
             <mat-label>Apellido Paterno</mat-label>
-            <input matInput type="text" required>
+            <input matInput type="text" [(ngModel)] = "usuario.lastname" required>
         </mat-form-field>
         <mat-form-field>
             <mat-label>Apellido Materno</mat-label>
-            <input matInput type="text" required>
+            <input matInput type="text" [(ngModel)] = "usuario.surname" required>
         </mat-form-field>
-        <button mat-stroked-button color="accent"><mat-icon>check_circle</mat-icon> Guardar</button>
+        <button mat-stroked-button color="accent" (click)="guardar()" ><mat-icon>check_circle</mat-icon> Guardar</button>
     </div>
 
     <div fxFlex="50" fxLayoutAlign="center">
@@ -31,6 +31,8 @@
             <img src="https://res.cloudinary.com/dqccbt9ko/image/upload/v1655100607/noimage_d1qywn.jpg" class="example-card">
         </mat-card>
     </div>
-
-
 </div>
+
+<pre>
+    {{ usuario | json }}
+</pre>

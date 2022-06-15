@@ -35,6 +35,11 @@ export class UserServiceService {
     return this.http.get<User[]>('http://localhost:8080/v1/api/user/lista');
   }
 
+  //forma fernando Herrera
+  addUser(user: User) : Observable<User> {
+    return this.http.post<User>(`${ this.url}/crear`, user);
+  }
+
   
 
 }
