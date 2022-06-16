@@ -3,6 +3,9 @@ import { User } from 'src/app/models/user';
 import { UserServiceService } from 'src/app/service/user-service.service';
 import { FormGroup, FormControl, Validators, NgForm, FormBuilder, FormArray } from '@angular/forms';
 import { ListUsersComponent } from '../list-users/list-users.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogConfirmComponent } from 'src/app/shared/dialog-confirm/dialog-confirm.component';
 
 @Component({
   selector: 'app-create-users',
@@ -20,21 +23,46 @@ export class CreateUsersComponent implements OnInit {
   }
 
 
-  user: User[] = []
-
-
   
-  constructor(private userService: UserServiceService) { }
+  constructor(private userService: UserServiceService, private snackbar: MatSnackBar, private dialog: MatDialog) { }
 
   ngOnInit(): void {
 
   }
 
   guardar() {
-    this.userService.addUser(this.usuario)
-    .subscribe( resp => {
-      console.log('Respuesta ', resp);
+
+    const dialog = this.dialog.open(DialogConfirmComponent, {
+      width: '250px',
+      data: this.usuario
+    });
+
+    dialog.afterClosed().subscribe(
+      (result) => {
+        if( result ) {
+          this.userService.addUser(this.usuario)
+          .subscribe( resp => {
+          this.mostrarSnackbar('Registrado');
     })
+        }
+      }
+    )
+
+    // if(this.usuario.firstname.trim().length === 0) {
+    //   console.log("Debe ingresar al menos un firstname")
+    //   return;
+    // }
+
+    
+  }
+
+
+  mostrarSnackbar( mensaje: string) {
+
+    this.snackbar.open( mensaje, 'ok!', { 
+      duration: 2500
+    });
+
   }
 
 

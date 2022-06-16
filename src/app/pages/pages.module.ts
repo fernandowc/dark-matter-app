@@ -28,6 +28,8 @@ import { MatTabsModule } from "@angular/material/tabs";
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { ListUsersComponent } from './users/list-users/list-users.component';
 import { ImagenPipe } from './pipe/imagen.pipe';
+import { MatSnackBarModule } from "@angular/material/snack-bar";
+import { MatDialogModule } from '@angular/material/dialog'; 
 
 @NgModule({
     declarations: [
@@ -62,7 +64,9 @@ import { ImagenPipe } from './pipe/imagen.pipe';
       ReactiveFormsModule,
       FormsModule,
       MatTabsModule,
-      MatProgressBarModule
+      MatProgressBarModule,
+      MatSnackBarModule,
+      MatDialogModule
     ]
   })
 export class PagesModule {}

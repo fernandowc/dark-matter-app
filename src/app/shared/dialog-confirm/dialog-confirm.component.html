@@ -1,0 +1,14 @@
+<h1>Esta seguro?</h1>
+
+<p>
+    Está a punto de guardar al usuario {{ data.firstname }}
+    <br>
+    Desea continuar?
+</p>
+
+<div>
+    <button mat-raised-button color="primary" (click)="guardar()">Si, guardar!</button>
+    <button mat-button color="warn" (click)="cerrar()">Cancelar</button>
+</div>
+
+
